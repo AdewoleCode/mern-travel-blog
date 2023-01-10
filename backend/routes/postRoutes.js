@@ -17,4 +17,4 @@ postRouter.post("/", addPost);
 postRouter.put("/:id", updatePost);
 postRouter.delete("/:id", deletePost);
 
-export default postRouter;
+module.exports = postRouter
