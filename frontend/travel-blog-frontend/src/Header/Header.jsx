@@ -1,7 +1,7 @@
 import React from 'react'
 // import { AppBar, Toolbar, Tabs, Tab } from "@material-ui/core"
 import ModeOfTravelIcon from '@mui/icons-material/ModeOfTravel';
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 
 import '../Header/Header.css'
 

@@ -1,0 +1,19 @@
+.diaries {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.diaries img{
+    width: 80%;
+    margin: 0 10%;
+    object-fit: cover;
+
+}
+
+.diaries hr{
+    margin-bottom: 10px;
+}
