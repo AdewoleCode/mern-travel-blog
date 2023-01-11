@@ -1,0 +1,91 @@
+
+.home {
+    position: relative;
+    /* border: 1px solid green; */
+    height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    /* padding: 20px; */
+}
+
+.home img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.home h1 {
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
+    font-size: 2.5rem;
+    margin-top: 50px;
+}
+
+.footer {
+    border: 1px solid rgb(63, 59, 59);
+    height: 20%;
+    width: 100%;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer h2 {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    padding: 10px;
+}
+
+.footer .btn-box {
+    /* border: 1px solid purple; */
+    text-align: center;
+    padding: 10px;
+}
+
+.footer .btn-box button {
+    padding: 12px 23px;
+    margin: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    /* outline: none; */
+    border: transparent;
+    cursor: pointer;
+}
+
+.footer .btn-box a {
+    text-decoration: none;
+}
+
+.footer .btn-box .btn-1 {
+    background: transparent;
+    color: rgb(19, 114, 240);
+    border: 1px solid  rgb(19, 114, 240);
+}
+
+.footer .btn-box .btn-1:hover {
+    background: rgb(19, 114, 240);
+    color: white;
+    border: 1px solid #fff;
+}
+
+
+.footer .btn-box .btn-2{
+    background-color:rgb(53, 134, 241);
+    color: white;
+}
+
+
+
+.footer .btn-box .btn-2:hover{
+    background-color:transparent;
+    color: rgb(19, 114, 240);
+    border: 1px solid  rgb(19, 114, 240);
+}
+
+/* .footer .btn-box .btn-2 a {
+    text-decoration: none;
+} */
