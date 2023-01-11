@@ -5,7 +5,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AutoDeleteIcon from '@mui/icons-material/AutoDelete';
 import EditIcon from '@mui/icons-material/Edit';
 
-const DiaryItem = () => {
+const DiaryItem = ({title, description, image, location, date, id}) => {
   return (
     <Card sx={{ height: '50%', width: '50%', margin: 1, padding: 1, displex: 'flex', flexDirection: 'column', boxShadow: "5px 5px 10px #ccc" }}>
       <CardHeader
@@ -19,17 +19,19 @@ const DiaryItem = () => {
             {<LocationOnIcon />}
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={location}
+        header={location}
+        subheader={date}
       />
       <img
         height="250"
-        src='https://www.webintravel.com/wp-content/uploads/2016/11/eco-littlehenrabiiStock.jpg'
-        alt="travelimage"
+        src={image}
+        // src='https://www.webintravel.com/wp-content/uploads/2016/11/eco-littlehenrabiiStock.jpg'
+        alt={title}
       />
       <CardContent>
         <Typography paddingBottom={1} variant="h6" color="text.secondary">
-          This impressive paella
+          {title}
         </Typography>
         <hr />
         <Typography paddingTop={2} variant="div" fontWeight={"bold"}>
@@ -37,9 +39,7 @@ const DiaryItem = () => {
         </Typography>
 
         <Typography paddingTop={1} variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+          {description}
         </Typography>
       </CardContent>
       <CardActions sx={{marginLeft:'75%'}}>
