@@ -4,8 +4,13 @@ import Diaries from "./Diaries/Diaries";
 import Login from "./Account/Login";
 import Register from "./Account/Register"
 import Home from "./Home/Home";
+import { useSelector } from "react-redux";
 
 function App() {
+  const isloggedIn = useSelector(state=> state.isloggedIn)
+  console.log(isloggedIn);
+
+
   return (
     <div className="App">
       <section>

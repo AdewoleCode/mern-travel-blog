@@ -5,9 +5,14 @@ import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { login } from "../api-helpers/helper";
+import { authActions } from "../store/store";
+import { useDispatch } from "react-redux";
 
 
 export default function Login() {
+
+  const dispatch = useDispatch()
+
   // const navigate = useNavigate();
   const [values, setValues] = useState({ name: "", password: "" });
   const toastOptions = {
@@ -39,7 +44,9 @@ export default function Login() {
     event.preventDefault();
 
     if (validateForm()) {
-      login(values).then(data=> console.log(data)).catch(err=> console.log(err))
+      login(values).then(data=> console.log(data))
+      .then(()=> dispatch(authActions.login()))
+      .catch(err=> console.log(err))
     }
 
   };

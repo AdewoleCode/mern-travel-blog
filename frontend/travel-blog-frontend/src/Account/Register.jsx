@@ -5,9 +5,14 @@ import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { signUp } from "../api-helpers/helper";
+import { useDispatch } from "react-redux";
+import { authActions } from '../store/store'
 
 export default function Register() {
+  const dispatch = useDispatch()
+
   // const navigate = useNavigate();
+
   const toastOptions = {
     position: "top-right",
     autoClose: 3000,
@@ -58,18 +63,10 @@ export default function Register() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (handleValidation()) {
-     signUp(values).then(data => console.log(data)).catch(err => console.log(err))
-      
-    
-
-
-      // const { email, name, password } = values;
-      // const { data } = await axios.post('', {
-      //   name,
-      //   email,
-      //   password,
-      // });
-
+     signUp(values)
+     .then(data => console.log(data))
+     .then(()=> dispatch(authActions.login()))
+     .catch(err => console.log(err))
     }
   }
 ;
