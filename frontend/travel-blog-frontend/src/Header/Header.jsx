@@ -19,7 +19,7 @@ const Header = () => {
             display: "DIARIES"
         },
         {
-            path: "account",
+            path: "login",
             display: "ACCOUNT"
         }
     ]

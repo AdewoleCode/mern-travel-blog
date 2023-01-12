@@ -1,7 +1,8 @@
 import Header from "./Header/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Diaries from "./Diaries/Diaries";
-import Account from "./Account/Account";
+import Login from "./Account/Login";
+import Register from "./Account/Register"
 import Home from "./Home/Home";
 
 function App() {
@@ -17,7 +18,9 @@ function App() {
           <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/diaries" element={<Diaries />} />
-            <Route path="/account" element={<Account />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+
           </Routes>
         </BrowserRouter>
       </section>
