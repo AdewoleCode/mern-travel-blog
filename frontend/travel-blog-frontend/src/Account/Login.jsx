@@ -44,7 +44,7 @@ export default function Login() {
     event.preventDefault();
 
     if (validateForm()) {
-      login(values).then(data=> console.log(data))
+      login(values).then(data=> localStorage.setItem('userId', data.id))
       .then(()=> dispatch(authActions.login()))
       .catch(err=> console.log(err))
     }

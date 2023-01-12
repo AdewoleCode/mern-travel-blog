@@ -64,7 +64,7 @@ export default function Register() {
     event.preventDefault();
     if (handleValidation()) {
      signUp(values)
-     .then(data => console.log(data))
+     .then(data => localStorage.setItem('userId', data.user._id))
      .then(()=> dispatch(authActions.login()))
      .catch(err => console.log(err))
     }
