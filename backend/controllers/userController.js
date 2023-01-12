@@ -62,8 +62,8 @@ const signup = async (req, res, next) => {
     }
 
     if (newUser) {
-      const { _id, name, email } = newUser;
-      return res.status(201).json({ _id, name, email });
+      // const { _id, name, email } = newUser;
+      return res.status(201).json({ newUser});
     } else {
       return res.status(500).json({ message: "Unexpected Error Occured" });
     }
