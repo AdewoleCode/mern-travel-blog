@@ -4,6 +4,8 @@ import '../Account/Register.css'
 import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { login } from "../api-helpers/helper";
+
 
 export default function Login() {
   // const navigate = useNavigate();
@@ -37,14 +39,12 @@ export default function Login() {
     event.preventDefault();
 
     if (validateForm()) {
-      const { email, password } = values;
-      const { data } = await axios.post('', {
-        email,
-        password,
-      });
+      login(values).then(data=> console.log(data)).catch(err=> console.log(err))
     }
 
   };
+
+  
 
   return (
     <>

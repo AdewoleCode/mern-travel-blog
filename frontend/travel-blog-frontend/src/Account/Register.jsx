@@ -4,6 +4,7 @@ import '../Account/Register.css'
 import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { signUp } from "../api-helpers/helper";
 
 export default function Register() {
   // const navigate = useNavigate();
@@ -57,12 +58,17 @@ export default function Register() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (handleValidation()) {
-      const { email, name, password } = values;
-      const { data } = await axios.post('', {
-        name,
-        email,
-        password,
-      });
+     signUp(values).then(data => console.log(data)).catch(err => console.log(err))
+      
+    
+
+
+      // const { email, name, password } = values;
+      // const { data } = await axios.post('', {
+      //   name,
+      //   email,
+      //   password,
+      // });
 
     }
   }
