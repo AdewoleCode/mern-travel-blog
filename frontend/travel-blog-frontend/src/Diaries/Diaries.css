@@ -16,3 +16,83 @@
 .diaries hr{
     margin-bottom: 10px;
 }
+
+
+.add-diary-box{
+    /* border: 1px solid red; */
+    width: 90%;
+    margin: 0 auto;
+    height: 90vh;
+}
+
+.add-diary-box .text-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+    margin: 2.2rem 0;
+    gap: 1rem;
+}
+
+.add-diary-box .text-box .add-icon {
+    font-size: 1.9rem;
+    color: black;
+}
+
+.add-diary-box h1 {
+    /* text-align: center; */
+    /* width: 100%; */
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
+    font-size: 2.5rem;
+}
+
+.add-diary-box form {
+    /* border: 1px solid blue; */
+    width: 75%;
+    margin: 0 auto;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    background-color: #00000076;
+    border-radius: 0.5rem;
+}
+
+.add-diary-box form input {
+    background-color: transparent;
+    padding: 0.75rem;
+    border: 0.1rem solid skyblue;
+    border-radius: 0.3rem;
+    color: white;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.add-diary-box input:focus {
+    border: 0.1rem solid white;
+    outline: none;
+}
+
+.add-diary-box input::placeholder {
+    color: white;
+}
+
+.add-diary-box button {
+    background-color: skyblue;
+    width: 60%;
+    margin: 0 auto;
+    color: white;
+    padding: 0.8rem 1.7rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.add-diary-box button:hover {
+    background-color: rgb(9, 165, 226);
+  }
+

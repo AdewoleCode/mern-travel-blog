@@ -74,7 +74,7 @@ return (
       <form action="" onSubmit={(event) => handleSubmit(event)}>
 
         <div className="brand">
-          <h1>register to create travel diary</h1>
+          <h1>create account</h1>
         </div>
         <input
           type="text"

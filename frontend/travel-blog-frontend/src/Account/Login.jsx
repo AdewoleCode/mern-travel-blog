@@ -57,7 +57,7 @@ export default function Login() {
       <div className="form-container">
         <form action="" onSubmit={(event) => handleSubmit(event)}>
           <div className="brand">
-            <h1>Login to create travel diary</h1>
+            <h1>Login</h1>
           </div>
           <input
             type="email"

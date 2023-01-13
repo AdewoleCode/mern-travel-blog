@@ -42,3 +42,22 @@ export const login = async (dataObj) => {
     const data = await response.data
     return data
 }
+
+export const addPost = async (dataObj) => {
+    
+    const response = await axios.post(PostsRoute, {
+        title: dataObj.title,
+        description: dataObj.description,
+        image: dataObj.image,
+        location: dataObj.location,
+        date: dataObj.date,
+        user: localStorage.getItem('userId')
+    } )
+
+    if (response.status !== 201){
+        return console.log('some error occured')
+    }
+
+    const data = response.data
+    return data
+}

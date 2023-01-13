@@ -29,20 +29,20 @@
 .form-container form {
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
+    gap: 1.3rem;
     background-color: #00000076;
     border-radius: 2rem;
-    padding: 2.2rem 5rem;
+    padding: 2.2rem 4rem;
 }
 
 .form-container input {
     background-color: transparent;
-    padding: 1rem;
+    padding: 0.7rem;
     border: 0.1rem solid skyblue;
     border-radius: 0.4rem;
     color: white;
     width: 100%;
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 .form-container input:focus {
