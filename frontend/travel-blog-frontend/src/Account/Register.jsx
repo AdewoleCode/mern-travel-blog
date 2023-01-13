@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState} from "react";
 import '../Account/Register.css'
 import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -10,8 +9,6 @@ import { authActions } from '../store/store'
 
 export default function Register() {
   const dispatch = useDispatch()
-
-  // const navigate = useNavigate();
 
   const toastOptions = {
     position: "top-right",
@@ -64,7 +61,7 @@ export default function Register() {
     event.preventDefault();
     if (handleValidation()) {
      signUp(values)
-     .then(data => localStorage.setItem('userId', data.user._id))
+     .then(data => localStorage.setItem('userId', data.newUser._id))
      .then(()=> dispatch(authActions.login()))
      .catch(err => console.log(err))
     }
@@ -77,7 +74,7 @@ return (
       <form action="" onSubmit={(event) => handleSubmit(event)}>
 
         <div className="brand">
-          <h1>register</h1>
+          <h1>register to create travel diary</h1>
         </div>
         <input
           type="text"

@@ -1,7 +1,6 @@
 .form-container {
     height: 90vh;
     width: 100%;
-    /* background: red; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,7 +17,7 @@
     justify-content: center;
 }
 
-img {
+.form-container img {
     height: 5rem;
 }
 
@@ -27,7 +26,7 @@ img {
     text-transform: uppercase;
 }
 
-form {
+.form-container form {
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
@@ -36,7 +35,7 @@ form {
     padding: 2.2rem 5rem;
 }
 
-input {
+.form-container input {
     background-color: transparent;
     padding: 1rem;
     border: 0.1rem solid skyblue;
@@ -46,16 +45,16 @@ input {
     font-size: 1rem;
 }
 
-input:focus {
+.form-container input:focus {
     border: 0.1rem solid white;
     outline: none;
 }
 
-input::placeholder {
+.form-container input::placeholder {
     color: white;
 }
 
-button {
+.form-container button {
     background-color: skyblue;
     color: white;
     padding: 1rem 2rem;
@@ -67,17 +66,17 @@ button {
     text-transform: uppercase;
 }
 
-button:hover {
-    background-color: #8157f5;
+.form-container button:hover {
+    background-color: rgb(9, 165, 226);
   }
 
-  span {
+.form-container  span {
     color: white;
     text-transform: uppercase;
     font-weight: bolder;
   }
 
-  span a {
+ .form-container span a {
     color: skyblue;
     text-decoration: none;
     font-weight: bolder;

@@ -1,13 +1,11 @@
 import React from 'react'
-// import { AppBar, Toolbar, Tabs, Tab } from "@material-ui/core"
 import ModeOfTravelIcon from '@mui/icons-material/ModeOfTravel';
-import { NavLink} from 'react-router-dom'
-
+import { NavLink } from 'react-router-dom'
 import '../Header/Header.css'
+import { useSelector } from 'react-redux';
 
 const Header = () => {
-
-    // const linkArr = ['home', 'diaries', 'auth']
+    const isloggedIn = useSelector(state=> state.isloggedIn)
 
     const nav__links = [
         {
@@ -24,6 +22,26 @@ const Header = () => {
         }
     ]
 
+    const loggedIn__Links = [
+        {
+            path: "home",
+            display: "HOME"
+        },
+        {
+            path: "diaries",
+            display: "DIARIES"
+        },
+        {
+            path: "add",
+            display: "ADD POST"
+        },
+        {
+            path: "profile",
+            display: "PROFILE"
+        },
+    ]
+
+
 
 
     return (
@@ -32,9 +50,25 @@ const Header = () => {
 
             <div className="nav_items">
                 <ul className='menu'>
-                    {nav__links.map((nav, index) => (
-                        <li className='nav__item' key={index}><NavLink to={nav.path} className={(navClass) => navClass.isActive ? 'nav__active' : ''}>{nav.display}</NavLink></li>
-                    ))}
+
+                    {
+                        isloggedIn ?
+
+                            loggedIn__Links.map((nav, index) => (
+                                <li className='nav__item' key={index}>
+                                    <NavLink to={nav.path} className={(navClass) => navClass.isActive ? 'nav__active' : ''}>
+                                        {nav.display}
+                                    </NavLink>
+                                </li>))
+                            :
+                            nav__links.map((nav, index) => (
+                                <li className='nav__item' key={index}>
+                                    <NavLink to={nav.path} className={(navClass) => navClass.isActive ? 'nav__active' : ''}>
+                                        {nav.display}
+                                    </NavLink>
+                                </li>
+                            ))
+                    }
                 </ul>
             </div>
         </div>
