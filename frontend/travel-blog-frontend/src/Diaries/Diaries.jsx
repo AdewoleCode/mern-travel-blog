@@ -24,7 +24,7 @@ const Diaries = () => {
               description={post.description}
               image={post.image}
               location={post.location}
-              id={post.id}
+              id={post._id}
               title={post.title}
               user={post.user}
             />

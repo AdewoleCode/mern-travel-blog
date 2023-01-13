@@ -61,3 +61,32 @@ export const addPost = async (dataObj) => {
     const data = response.data
     return data
 }
+
+
+export const getSinglePost = async (id) => {
+    const response = await axios.get(`${PostsRoute}/${id}`)
+
+    if (response.status !== 200){
+        return console.log('some error occured')
+    }
+
+    const data = response.data
+    return data
+
+}
+
+// export const updateSinglePost = async (dataObj, id) => {
+//     const response = await axios.put(`${PostsRoute}/${id}`, {
+//         title: dataObj.title,
+//         description: dataObj.description,
+//         location: dataObj.location,
+//         image: dataObj.image
+//     })
+
+//     if (response.status !== 200){
+//         return console.log('something went wrong!')
+//     }
+
+//     const data = response.data
+//     return data
+// }

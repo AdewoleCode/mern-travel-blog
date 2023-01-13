@@ -38,7 +38,7 @@ const AddDiary = () => {
         toastOptions
       );
       return false;
-    } 
+    }
     return true;
   };
 
@@ -48,11 +48,8 @@ const AddDiary = () => {
     if (handleValidation()) {
       console.log(posts);
       addPost(posts)
-      .then(()=>{
-        toast.success('post successfully added', toastOptions)
-      } )
-      .then(()=> navigate('/diaries'))
-      .catch((err)=> toast.error('something went wrong', toastOptions))
+      toast.success('post successfully added', toastOptions)
+      navigate('/diaries')
     }
   }
 

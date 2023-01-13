@@ -4,6 +4,7 @@ import { Card, CardHeader, Avatar, IconButton, CardContent, Typography, CardActi
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AutoDeleteIcon from '@mui/icons-material/AutoDelete';
 import EditIcon from '@mui/icons-material/Edit';
+import { Link } from 'react-router-dom';
 
 const DiaryItem = ({ title, description, image, location, date, id, user }) => {
 
@@ -55,10 +56,9 @@ const DiaryItem = ({ title, description, image, location, date, id, user }) => {
       {
         isLoggedInUser() ? 
         <CardActions sx={{ marginLeft: '75%' }}>
-          <IconButton color='warning'><EditIcon /></IconButton>
+          <IconButton LinkComponent={Link} to={`/post/${id}`} color='warning'><EditIcon /></IconButton>
           <IconButton color='error'><AutoDeleteIcon /></IconButton>
         </CardActions> :  null
-
       }
     </Card>)
 }

@@ -96,3 +96,8 @@
     background-color: rgb(9, 165, 226);
   }
 
+
+  .update-box{
+    height: 80vh;
+    border: 1px solid red;
+  }

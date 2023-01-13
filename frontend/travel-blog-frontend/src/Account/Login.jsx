@@ -43,15 +43,15 @@ export default function Login() {
     event.preventDefault();
 
     if (validateForm()) {
-      login(values).then(data=> localStorage.setItem('userId', data.id))
-      .then(()=> dispatch(authActions.login()))
-      .then(()=> toast.success('login succesfully!!', toastOptions))
-      .then(()=> navigate('/diaries') )
-      .catch(err=> console.log(err))
+      login(values).then(data => localStorage.setItem('userId', data.id))
+        .then(() => dispatch(authActions.login()))
+      toast.success('account created succesfully!', toastOptions)
+        .then(() => navigate('/diaries'))
+        .catch(err => console.log(err))
     }
   };
 
-  
+
 
   return (
     <>

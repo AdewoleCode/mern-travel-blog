@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import '../Account/Register.css'
 import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -25,7 +25,7 @@ export default function Register() {
     confirmPassword: "",
   });
 
- 
+
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
@@ -38,7 +38,7 @@ export default function Register() {
         toastOptions
       );
       return false;
-    } else if ( name === "" || name.length < 3) {
+    } else if (name === "" || name.length < 3) {
       toast.error(
         "name cannot be empty and must be greater than 3 characters.",
         toastOptions
@@ -61,56 +61,56 @@ export default function Register() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (handleValidation()) {
-     signUp(values)
-     .then(data => localStorage.setItem('userId', data.newUser._id))
-     .then(()=> dispatch(authActions.login()))
-     .then(()=> toast.success('account created succesfully!', toastOptions))
-     .then(()=> navigate('/diaries') )
-     .catch(err => console.log(err))
+      signUp(values)
+        .then(data => localStorage.setItem('userId', data.newUser._id))
+        .then(() => dispatch(authActions.login()))
+      toast.success('account created succesfully!', toastOptions)
+        .then(() => navigate('/diaries'))
+        .catch(err => console.log(err))
     }
   }
-;
+    ;
 
-return (
-  <>
-    <div className="form-container">
-      <form action="" onSubmit={(event) => handleSubmit(event)}>
+  return (
+    <>
+      <div className="form-container">
+        <form action="" onSubmit={(event) => handleSubmit(event)}>
 
-        <div className="brand">
-          <h1>create account</h1>
-        </div>
-        <input
-          type="text"
-          placeholder="name"
-          name="name"
-          onChange={(e) => handleChange(e)}
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          name="email"
-          onChange={(e) => handleChange(e)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          name="password"
-          onChange={(e) => handleChange(e)}
-        />
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          name="confirmPassword"
-          onChange={(e) => handleChange(e)}
-        />
-        <button type="submit">Create User</button>
-        <span>
-          Already have an account ? <Link to="/login">Login.</Link>
-        </span>
-      </form>
-    </div>
-    <ToastContainer />
-  </>
-);
+          <div className="brand">
+            <h1>create account</h1>
+          </div>
+          <input
+            type="text"
+            placeholder="name"
+            name="name"
+            onChange={(e) => handleChange(e)}
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            name="email"
+            onChange={(e) => handleChange(e)}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            onChange={(e) => handleChange(e)}
+          />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            name="confirmPassword"
+            onChange={(e) => handleChange(e)}
+          />
+          <button type="submit">Create User</button>
+          <span>
+            Already have an account ? <Link to="/login">Login.</Link>
+          </span>
+        </form>
+      </div>
+      <ToastContainer />
+    </>
+  );
 }
 

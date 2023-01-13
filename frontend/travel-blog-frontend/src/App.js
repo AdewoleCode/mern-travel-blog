@@ -9,6 +9,10 @@ import Profile from "./Account/Profile";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { authActions } from "./store/store";
+import DiaryUpdate from "./Diaries/DiaryUpdate";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 function App() {
   const dispatch = useDispatch()
@@ -17,7 +21,7 @@ function App() {
     if (localStorage.getItem('userId')){
       dispatch(authActions.login())
     }
-  }, [])
+  }, [localStorage.getItem('userId')])
 
   // useEffect(()=> {
   //   if (isloggedIn){
@@ -45,9 +49,11 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/add" element={<AddDiary />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/post/:id" element={<DiaryUpdate />} />
           </Routes>
         </BrowserRouter>
       </section>
+      <ToastContainer />
     </div>
   );
 }
