@@ -5,8 +5,20 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AutoDeleteIcon from '@mui/icons-material/AutoDelete';
 import EditIcon from '@mui/icons-material/Edit';
 import { Link } from 'react-router-dom';
+import { deletePost } from '../api-helpers/helper';
+import { toast } from "react-toastify";
 
 const DiaryItem = ({ title, description, image, location, date, id, user }) => {
+
+
+  const handleDelete = async () => {
+    try {
+      const response =  deletePost(id)
+      toast.success('post deleted successfully!')
+    } catch (error) {
+      toast.error(error.message)
+    }
+  }
 
   const isLoggedInUser = () => {
     if (localStorage.getItem('userId') === user) {
@@ -18,7 +30,7 @@ const DiaryItem = ({ title, description, image, location, date, id, user }) => {
 
 
   return (
-    <Card sx={{ height: '50%', width: '50%', margin: 1, padding: 1, displex: 'flex', flexDirection: 'column', boxShadow: "5px 5px 10px #ccc" }}>
+    <Card sx={{ height: '50%', width: '50%', margin: 'auto', padding: 1, displex: 'flex', flexDirection: 'column', boxShadow: "5px 5px 10px #ccc" }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: 'blue' }} aria-label="recipe">
@@ -57,7 +69,7 @@ const DiaryItem = ({ title, description, image, location, date, id, user }) => {
         isLoggedInUser() ? 
         <CardActions sx={{ marginLeft: '75%' }}>
           <IconButton LinkComponent={Link} to={`/post/${id}`} color='warning'><EditIcon /></IconButton>
-          <IconButton color='error'><AutoDeleteIcon /></IconButton>
+          <IconButton color='error' onClick={handleDelete}><AutoDeleteIcon /></IconButton>
         </CardActions> :  null
       }
     </Card>)

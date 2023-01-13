@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { PostsRoute, loginRoute, registerRoute } from '../utils/APIRoutes'
+import { PostsRoute, loginRoute, registerRoute, usersRoute } from '../utils/APIRoutes'
 
 
 export const getAllPosts = async () => {
@@ -90,3 +90,30 @@ export const getSinglePost = async (id) => {
 //     const data = response.data
 //     return data
 // }
+
+
+export const deletePost = async (id)=> {
+    const response = await axios.delete(`${PostsRoute}/${id}`).catch(err=> console.log(err))
+
+    if (response.status !== 200){
+        return console.log('unable to delete post!')
+    }
+
+    const data = response.data
+    return data
+
+}
+
+
+export const getUser = async () => {
+    const id = localStorage.getItem('userId')
+    const response = await axios.get(`${usersRoute}/${id}`).catch(err=> console.log(err))
+
+    if (response.status !== 200){
+        return console.log('unable to get user')
+    }
+
+    const data = response.data
+    return data
+
+}

@@ -94,7 +94,7 @@ const DiaryUpdate = () => {
         <>
             <div className='add-diary-box'>
                 <div className="text-box">
-                    <h1>Add Your Travel Diary</h1>
+                    <h1>Update Diary</h1>
                     <div className='icon'>
                         <PostAddIcon className='add-icon' />
                     </div>
