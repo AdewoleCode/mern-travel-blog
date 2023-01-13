@@ -6,9 +6,25 @@ import Register from "./Account/Register";
 import Home from "./Home/Home";
 import AddDiary from "./Diaries/AddDiary";
 import Profile from "./Account/Profile";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { authActions } from "./store/store";
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(()=> {
+    if (localStorage.getItem('userId')){
+      dispatch(authActions.login())
+    }
+  }, [])
+
+  // useEffect(()=> {
+  //   if (isloggedIn){
+
+  //   }
+  // }, [])
+
   
   const isloggedIn = useSelector((state) => state.isloggedIn);
   console.log(isloggedIn);

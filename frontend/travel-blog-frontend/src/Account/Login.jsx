@@ -11,8 +11,8 @@ import { useDispatch } from "react-redux";
 export default function Login() {
 
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
-  // const navigate = useNavigate();
   const [values, setValues] = useState({ name: "", password: "" });
   const toastOptions = {
     position: "top-right",
@@ -45,9 +45,10 @@ export default function Login() {
     if (validateForm()) {
       login(values).then(data=> localStorage.setItem('userId', data.id))
       .then(()=> dispatch(authActions.login()))
+      .then(()=> toast.success('login succesfully!!', toastOptions))
+      .then(()=> navigate('/diaries') )
       .catch(err=> console.log(err))
     }
-
   };
 
   

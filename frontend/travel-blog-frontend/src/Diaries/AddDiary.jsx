@@ -3,9 +3,11 @@ import PostAddIcon from '@mui/icons-material/PostAdd';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { addPost } from '../api-helpers/helper';
+import { useNavigate } from 'react-router-dom';
 
 
 const AddDiary = () => {
+  const navigate = useNavigate()
 
   const toastOptions = {
     position: "top-right",
@@ -45,7 +47,12 @@ const AddDiary = () => {
     event.preventDefault();
     if (handleValidation()) {
       console.log(posts);
-      addPost(posts).then(res => console.log(res))
+      addPost(posts)
+      .then(()=>{
+        toast.success('post successfully added', toastOptions)
+      } )
+      .then(()=> navigate('/diaries'))
+      .catch((err)=> toast.error('something went wrong', toastOptions))
     }
   }
 

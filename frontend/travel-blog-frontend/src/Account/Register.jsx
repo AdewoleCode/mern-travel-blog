@@ -9,6 +9,7 @@ import { authActions } from '../store/store'
 
 export default function Register() {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const toastOptions = {
     position: "top-right",
@@ -63,6 +64,8 @@ export default function Register() {
      signUp(values)
      .then(data => localStorage.setItem('userId', data.newUser._id))
      .then(()=> dispatch(authActions.login()))
+     .then(()=> toast.success('account created succesfully!', toastOptions))
+     .then(()=> navigate('/diaries') )
      .catch(err => console.log(err))
     }
   }

@@ -1,11 +1,21 @@
 import React from 'react'
 import "../Diaries/Diaries.css"
-import { Card, CardHeader, Avatar, IconButton, CardContent, Typography, CardActions,} from '@mui/material'
+import { Card, CardHeader, Avatar, IconButton, CardContent, Typography, CardActions, } from '@mui/material'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AutoDeleteIcon from '@mui/icons-material/AutoDelete';
 import EditIcon from '@mui/icons-material/Edit';
 
-const DiaryItem = ({title, description, image, location, date, id}) => {
+const DiaryItem = ({ title, description, image, location, date, id, user }) => {
+
+  const isLoggedInUser = () => {
+    if (localStorage.getItem('userId') === user) {
+      return true
+    }
+    else return false
+  }
+
+
+
   return (
     <Card sx={{ height: '50%', width: '50%', margin: 1, padding: 1, displex: 'flex', flexDirection: 'column', boxShadow: "5px 5px 10px #ccc" }}>
       <CardHeader
@@ -42,10 +52,14 @@ const DiaryItem = ({title, description, image, location, date, id}) => {
           {description}
         </Typography>
       </CardContent>
-      <CardActions sx={{marginLeft:'75%'}}>
-        <IconButton color='warning'><EditIcon /></IconButton>
-        <IconButton color = 'error'><AutoDeleteIcon /></IconButton>
-      </CardActions>
+      {
+        isLoggedInUser() ? 
+        <CardActions sx={{ marginLeft: '75%' }}>
+          <IconButton color='warning'><EditIcon /></IconButton>
+          <IconButton color='error'><AutoDeleteIcon /></IconButton>
+        </CardActions> :  null
+
+      }
     </Card>)
 }
 
