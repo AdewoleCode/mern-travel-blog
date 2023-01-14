@@ -58,19 +58,15 @@
 
 .footer .btn-box a {
     text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
 }
 
 .footer .btn-box .btn-1 {
-    background: transparent;
-    color: rgb(19, 114, 240);
-    border: 1px solid  rgb(19, 114, 240);
-}
-
-.footer .btn-box .btn-1:hover {
     background: rgb(19, 114, 240);
-    color: white;
-    border: 1px solid #fff;
-}
+    color: rgb(19, 114, 240);
+    }
 
 
 .footer .btn-box .btn-2{
@@ -78,14 +74,15 @@
     color: white;
 }
 
-
-
-.footer .btn-box .btn-2:hover{
-    background-color:transparent;
-    color: rgb(19, 114, 240);
-    border: 1px solid  rgb(19, 114, 240);
+.footer .btn-box .btn-1:hover{
+    background-color:gray;
 }
 
-/* .footer .btn-box .btn-2 a {
-    text-decoration: none;
-} */
+.footer .btn-box .btn-2:hover{
+    background-color:gray;
+}
+
+
+
+
+

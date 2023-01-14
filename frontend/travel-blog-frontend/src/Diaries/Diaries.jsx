@@ -19,7 +19,8 @@ const Diaries = () => {
       {
         posts && posts.map((post, index) => {
           return (
-            <DiaryItem key={index}
+            <DiaryItem
+             key={index}
               date={new Date(`${post.date}`).toLocaleDateString()}
               description={post.description}
               image={post.image}

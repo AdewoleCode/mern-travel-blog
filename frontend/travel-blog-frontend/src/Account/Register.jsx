@@ -70,7 +70,9 @@ export default function Register() {
     if (handleValidation()) {
       signUp(values)
         .then(onAfterSignup)
-        .catch(err => console.log(err))
+        .catch(err => {
+          toast.error(err.response.data.message, toastOptions)
+        })
     }
   }
     ;

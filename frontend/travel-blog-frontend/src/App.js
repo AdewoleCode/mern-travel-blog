@@ -12,6 +12,7 @@ import { authActions } from "./store/store";
 import DiaryUpdate from "./Diaries/DiaryUpdate";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import DiaryItem from "./Diaries/DiaryItem";
 
 function App() {
   const dispatch = useDispatch();
@@ -45,6 +46,8 @@ function App() {
             <Route path="/diaries" element={<Diaries />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/item" element={<DiaryItem />} />
+
             {isloggedIn && (
               <>
                 <Route path="/add" element={<AddDiary />} />

@@ -51,7 +51,9 @@ export default function Login() {
     if (validateForm()) {
       login(values)
         .then(onAfterLogin)
-        .catch(err => console.log(err))
+        .catch(err => {
+          toast.error(err.response.data.message, toastOptions)
+        })
     }
   };
 

@@ -6,19 +6,19 @@
     align-items: center;
 }
 
-.diaries img{
+.diaries img {
     width: 95%;
     margin: 0 2.5%;
     object-fit: cover;
 
 }
 
-.diaries hr{
+.diaries hr {
     margin-bottom: 10px;
 }
 
 
-.add-diary-box{
+.add-diary-box {
     /* border: 1px solid red; */
     width: 90%;
     margin: 0 auto;
@@ -94,10 +94,114 @@
 
 .add-diary-box button:hover {
     background-color: rgb(9, 165, 226);
-  }
+}
 
 
-  .update-box{
+.update-box {
     height: 80vh;
     border: 1px solid red;
-  }
+}
+
+
+.diary {
+    border: 1px solid rgb(159, 217, 240);
+    width: 55%;
+    height: 90vh;
+    margin: 1rem auto;
+    padding: 20px;
+    box-shadow: 5px 5px 10px 10px #bbb;
+    border-radius: 5px;
+}
+
+.diary .diary-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.diary .diary-d {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.diary .diary-d .loc {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5px;
+}
+
+.diary .diary-d .loc h4 {
+    font-weight: 600;
+}
+
+.diary .diary-d h1 {
+    /* border: 1px solid blue; */
+    border-radius: 50%;
+    padding: 0.3rem 0.8rem;
+    color: #fff;
+    background-color: blue;
+}
+
+
+.diary .diary-image {
+    /* border: 1px solid green; */
+    height: 55%;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.diary .diary-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.diary .diary-title {
+    font-size: 1.5rem;
+    padding: 0.7rem;
+}
+
+.diary .diary-username {
+    padding: 10px 0;
+    font-size: 1.2rem;
+}
+
+
+.diary .diary-username span {
+    padding: 10px 0;
+    font-size: 1.25rem;
+    font-weight: bolder;
+}
+
+.diary .diary-btn {
+    /* border: 1px solid red; */
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 3rem;
+    padding: 1rem;
+}
+
+.diary .diary-btn .icon-d {
+    font-size: 2rem;
+    cursor: pointer;
+    color: rgb(243, 23, 23);
+}
+
+.diary .diary-btn .icon-d:hover {
+    background-color: gray;
+    border-radius: 10px;
+}
+
+.diary-btn .upd-icon{
+    font-size: 2rem;
+}
+
+.diary-btn .upd-icon:hover {
+    background-color: gray;
+    border-radius: 10px;
+
+}

@@ -3,7 +3,9 @@
     display: flex;
     align-items: center;
     padding: 14px 8px;
-    background-color: skyblue;
+    /* background-color: rgb(147, 180, 194); */
+    background-color: #00000076;
+
     justify-content: space-between;
     position: sticky;
 }
@@ -32,14 +34,14 @@
 
 
 .nav__item a {
-    color: var(--primary-color);
+    color: #fff;
     font-weight: 500;
     text-decoration: none;
 }
 
 .nav__active {
     font-weight: 750 !important;
-    color: white !important;
+    color: skyblue !important;
     text-decoration: underline !important;
     text-underline-offset: 12px !important;
 }

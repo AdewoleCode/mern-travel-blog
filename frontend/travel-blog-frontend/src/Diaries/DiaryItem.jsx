@@ -1,6 +1,6 @@
 import React from 'react'
 import "../Diaries/Diaries.css"
-import { Card, CardHeader, Avatar, IconButton, CardContent, Typography, CardActions, } from '@mui/material'
+// import { Card, CardHeader, Avatar, IconButton, CardContent, Typography, CardActions, } from '@mui/material'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AutoDeleteIcon from '@mui/icons-material/AutoDelete';
 import EditIcon from '@mui/icons-material/Edit';
@@ -13,7 +13,7 @@ const DiaryItem = ({ title, description, image, location, date, id, user, name }
 
   const handleDelete = async () => {
     try {
-      const response = deletePost(id)
+      deletePost(id)
       toast.success('post deleted successfully!')
     } catch (error) {
       toast.error(error.message)
@@ -27,59 +27,101 @@ const DiaryItem = ({ title, description, image, location, date, id, user, name }
     else return false
   }
 
+  const navToUpdatePage = () => {
 
+  }
 
   return (
-    <Card sx={{
-      width: '60%',
-      height: '85vh',
-      margin: 'auto',
-      padding: 1, displex: 'flex',
-      flexDirection: 'column',
-      boxShadow: "10px 10px 20px #bbb"
-    }}>
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: 'blue' }} aria-label="recipe">
-            {name.charAt(0)}
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            {<LocationOnIcon />}
-          </IconButton>
-        }
-        title={location}
-        header={location}
-        subheader={date}
-      />
-      <img
-        height="250"
-        src={image}
-        // src='https://www.webintravel.com/wp-content/uploads/2016/11/eco-littlehenrabiiStock.jpg'
-        alt={title}
-      />
-      <CardContent>
-        <Typography paddingBottom={1} variant="h6" color="text.secondary">
-          {title}
-        </Typography>
-        <hr />
-        <Typography paddingTop={2} variant="div" fontWeight={"bold"}>
-          {name}
-        </Typography>
+    <div className='diary'>
+      <div className="diary-head">
+        <div className="diary-date">
+          <div className="diary-d">
+            <h1> {name.charAt(0).toUpperCase()}</h1>
+            <div className="loc">
+              <h4>{location}</h4>
+              <h4>{date}</h4>
+            </div>
+          </div>
+        </div>
+        <div className="diary-icon-loc">
+          <LocationOnIcon />
+        </div>
+      </div>
+      <div className="diary-image">
+        <img src={image} alt="img" />
+      </div>
+      <div className="diary-title">
+        {title}
+      </div>
+      <hr />
+      <div className="diary-username">
+        <span>{name.toUpperCase()}</span> : {description}
+      </div>
 
-        <Typography paddingTop={1} variant="body2" color="text.secondary">
-          {description}
-        </Typography>
-      </CardContent>
       {
         isLoggedInUser() ?
-          <CardActions sx={{ marginLeft: '45%' }}>
-            <IconButton LinkComponent={Link} to={`/post/${id}`} color='warning'><EditIcon /></IconButton>
-            <IconButton color='error' onClick={handleDelete}><AutoDeleteIcon /></IconButton>
-          </CardActions> : null
+          <div className="diary-btn">
+            <Link to={`/post/${id}`}><EditIcon className='upd-icon' /></Link>
+            <AutoDeleteIcon onClick={handleDelete} className='icon-d' />
+          </div> : null
       }
-    </Card>)
+
+    </div>
+  )
+
+
+
+  // return (
+  //   <Card sx={{
+  //     width: '60%',
+  //     height: '85vh',
+  //     margin: 'auto',
+  //     padding: 1, displex: 'flex',
+  //     flexDirection: 'column',
+  //     boxShadow: "10px 10px 20px #bbb"
+  //   }}>
+  //     <CardHeader
+  //       avatar={
+  //         <Avatar sx={{ bgcolor: 'blue' }} aria-label="recipe">
+  //           {name.charAt(0)}
+  //         </Avatar>
+  //       }
+  //       action={
+  //         <IconButton aria-label="settings">
+  //           {<LocationOnIcon />}
+  //         </IconButton>
+  //       }
+  //       title={location}
+  //       header={location}
+  //       subheader={date}
+  //     />
+  //     <img
+  //       height="250"
+  //       src={image}
+  //       // src='https://www.webintravel.com/wp-content/uploads/2016/11/eco-littlehenrabiiStock.jpg'
+  //       alt={title}
+  //     />
+  //     <CardContent>
+  //       <Typography paddingBottom={1} variant="h6" color="text.secondary">
+  //         {title}
+  //       </Typography>
+  //       <hr />
+  //       <Typography paddingTop={2} variant="div" fontWeight={"bold"}>
+  //         {name}
+  //       </Typography>
+
+  //       <Typography paddingTop={1} variant="body2" color="text.secondary">
+  //         {description}
+  //       </Typography>
+  //     </CardContent>
+  //     {
+  //       isLoggedInUser() ?
+  //         <CardActions sx={{ marginLeft: '45%' }}>
+  //           <IconButton LinkComponent={Link} to={`/post/${id}`} color='warning'><EditIcon /></IconButton>
+  //           <IconButton color='error' onClick={handleDelete}><AutoDeleteIcon /></IconButton>
+  //         </CardActions> : null
+  //     }
+  //   </Card>)
 }
 
 export default DiaryItem

@@ -84,7 +84,7 @@
 
   .profile-box{
     width: 100%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     padding: 30px;
   }
 
@@ -123,3 +123,20 @@
     margin: 0 auto;
   }
 
+
+  .profile-box .user-box button{
+    padding: 15px 23px;
+    margin: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    /* outline: none; */
+    border: transparent;
+    cursor: pointer;
+    background-color: rgb(105, 196, 231);
+    color: white;
+    width: 20%;
+  }
+
+  .profile-box .user-box button:hover{
+    background-color: rgb(148, 221, 250);
+  }
