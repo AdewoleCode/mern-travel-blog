@@ -68,7 +68,7 @@ const signup = async (req, res, next) => {
       return res.status(500).json({ message: "Unexpected Error Occured" });
     }
   } catch (error) {
-    return res.json({ msg: error.message});
+    return res.json({ messasge: error.message});
   }
 };
 const login = async (req, res, next) => {
@@ -97,7 +97,7 @@ const login = async (req, res, next) => {
       return res.status(400).json({ message: "Incorrect Password" });
     }
   } catch (error) {
-    return res.json({ msg: error.message});
+    return res.json({ message: error.message});
   }
 };
 
