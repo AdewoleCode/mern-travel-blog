@@ -5,8 +5,8 @@ const User = require("../models/User");
 const getAllPosts = async (req, res) => {
   let posts;
   try {
-    // posts = await Post.find().populate("user");
-    posts = await Post.find();
+    posts = await Post.find().populate("user");
+    // posts = await Post.find();
   } catch (err) {
     return console.log(err);
   }
