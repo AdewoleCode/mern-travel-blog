@@ -11,7 +11,7 @@ const Home = () => {
         <div className="footer">
             <h2>SHARE YOUR TRAVEL DIARIES WITH US</h2>
             <div className="btn-box">
-                <button className='btn-1'> Share Your Stories</button>
+                <button className='btn-1'> <Link to="/add"> Share Your Stories </Link> </button>
                 <button className='btn-2'> <Link to="/diaries">View Diaries</Link></button>
             </div>
         </div>

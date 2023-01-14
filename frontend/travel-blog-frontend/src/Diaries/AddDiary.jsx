@@ -25,6 +25,11 @@ const AddDiary = () => {
     date: ""
   })
 
+  const onAfterAdd = () => {
+    toast.success('post successfully created', toastOptions)
+    navigate('/diaries')
+  }
+
   const handleChange = (event) => {
     setPosts({ ...posts, [event.target.name]: event.target.value });
   };
@@ -46,10 +51,8 @@ const AddDiary = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (handleValidation()) {
-      console.log(posts);
       addPost(posts)
-      toast.success('post successfully added', toastOptions)
-      navigate('/diaries')
+      .then(onAfterAdd)
     }
   }
 

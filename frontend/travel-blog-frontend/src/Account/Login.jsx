@@ -22,6 +22,12 @@ export default function Login() {
     theme: "light",
   };
 
+  const onAfterLogin = (data) => {
+    localStorage.setItem('userId', data.id)
+    dispatch(authActions.login())
+    toast.success('Login succesful!', toastOptions)
+    navigate('/diaries')
+  }
 
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
@@ -43,10 +49,8 @@ export default function Login() {
     event.preventDefault();
 
     if (validateForm()) {
-      login(values).then(data => localStorage.setItem('userId', data.id))
-        .then(() => dispatch(authActions.login()))
-      toast.success('account created succesfully!', toastOptions)
-        .then(() => navigate('/diaries'))
+      login(values)
+        .then(onAfterLogin)
         .catch(err => console.log(err))
     }
   };

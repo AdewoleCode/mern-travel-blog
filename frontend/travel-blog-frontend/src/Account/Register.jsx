@@ -25,6 +25,13 @@ export default function Register() {
     confirmPassword: "",
   });
 
+  const onAfterSignup = (data) => {
+    localStorage.setItem('userId', data.newUser._id)
+    dispatch(authActions.login())
+    toast.success('account created succesfully!', toastOptions)
+    navigate('/diaries')
+  }
+
 
   const handleChange = (event) => {
     setValues({ ...values, [event.target.name]: event.target.value });
@@ -62,10 +69,7 @@ export default function Register() {
     event.preventDefault();
     if (handleValidation()) {
       signUp(values)
-        .then(data => localStorage.setItem('userId', data.newUser._id))
-        .then(() => dispatch(authActions.login()))
-      toast.success('account created succesfully!', toastOptions)
-        .then(() => navigate('/diaries'))
+        .then(onAfterSignup)
         .catch(err => console.log(err))
     }
   }

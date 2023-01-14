@@ -8,12 +8,12 @@ import { Link } from 'react-router-dom';
 import { deletePost } from '../api-helpers/helper';
 import { toast } from "react-toastify";
 
-const DiaryItem = ({ title, description, image, location, date, id, user }) => {
+const DiaryItem = ({ title, description, image, location, date, id, user, name }) => {
 
 
   const handleDelete = async () => {
     try {
-      const response =  deletePost(id)
+      const response = deletePost(id)
       toast.success('post deleted successfully!')
     } catch (error) {
       toast.error(error.message)
@@ -30,11 +30,18 @@ const DiaryItem = ({ title, description, image, location, date, id, user }) => {
 
 
   return (
-    <Card sx={{ height: '50%', width: '50%', margin: 'auto', padding: 1, displex: 'flex', flexDirection: 'column', boxShadow: "5px 5px 10px #ccc" }}>
+    <Card sx={{
+      width: '60%',
+      height: '85vh',
+      margin: 'auto',
+      padding: 1, displex: 'flex',
+      flexDirection: 'column',
+      boxShadow: "10px 10px 20px #bbb"
+    }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: 'blue' }} aria-label="recipe">
-            R
+            {name.charAt(0)}
           </Avatar>
         }
         action={
@@ -58,7 +65,7 @@ const DiaryItem = ({ title, description, image, location, date, id, user }) => {
         </Typography>
         <hr />
         <Typography paddingTop={2} variant="div" fontWeight={"bold"}>
-          Adewole ademola
+          {name}
         </Typography>
 
         <Typography paddingTop={1} variant="body2" color="text.secondary">
@@ -66,11 +73,11 @@ const DiaryItem = ({ title, description, image, location, date, id, user }) => {
         </Typography>
       </CardContent>
       {
-        isLoggedInUser() ? 
-        <CardActions sx={{ marginLeft: '75%' }}>
-          <IconButton LinkComponent={Link} to={`/post/${id}`} color='warning'><EditIcon /></IconButton>
-          <IconButton color='error' onClick={handleDelete}><AutoDeleteIcon /></IconButton>
-        </CardActions> :  null
+        isLoggedInUser() ?
+          <CardActions sx={{ marginLeft: '45%' }}>
+            <IconButton LinkComponent={Link} to={`/post/${id}`} color='warning'><EditIcon /></IconButton>
+            <IconButton color='error' onClick={handleDelete}><AutoDeleteIcon /></IconButton>
+          </CardActions> : null
       }
     </Card>)
 }

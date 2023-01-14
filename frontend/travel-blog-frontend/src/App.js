@@ -13,15 +13,14 @@ import DiaryUpdate from "./Diaries/DiaryUpdate";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
 function App() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  useEffect(()=> {
-    if (localStorage.getItem('userId')){
-      dispatch(authActions.login())
+  useEffect(() => {
+    if (localStorage.getItem("userId")) {
+      dispatch(authActions.login());
     }
-  }, [localStorage.getItem('userId')])
+  }, [localStorage]);
 
   // useEffect(()=> {
   //   if (isloggedIn){
@@ -29,7 +28,6 @@ function App() {
   //   }
   // }, [])
 
-  
   const isloggedIn = useSelector((state) => state.isloggedIn);
   console.log(isloggedIn);
 
@@ -47,9 +45,13 @@ function App() {
             <Route path="/diaries" element={<Diaries />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/add" element={<AddDiary />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/post/:id" element={<DiaryUpdate />} />
+            {isloggedIn && (
+              <>
+                <Route path="/add" element={<AddDiary />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/post/:id" element={<DiaryUpdate />} />
+              </>
+            )}
           </Routes>
         </BrowserRouter>
       </section>

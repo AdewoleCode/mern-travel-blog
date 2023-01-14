@@ -51,6 +51,11 @@ const DiaryUpdate = () => {
             .catch(err => console.log(err))
     }, [id])
 
+    
+    const onPostUpdate = () => {
+        toast.success('post updated succesfully!', toastOptions)
+        navigate('/diaries')    
+    }
 
     const handleChange = (event) => {
         setPosts((prevState) => (
@@ -78,10 +83,8 @@ const DiaryUpdate = () => {
         if (handleValidation()) {
 
             try {
-                const response = await axios.put(`http://localhost:3030/post/${id}`, posts)
-                console.log(response.data);
-                toast.success(response.data.message, toastOptions)
-                navigate('/diaries')    
+                await axios.put(`http://localhost:3030/post/${id}`, posts)
+                .then( onPostUpdate)
             } catch (error) {
                 toast.error(error.message)
             }
