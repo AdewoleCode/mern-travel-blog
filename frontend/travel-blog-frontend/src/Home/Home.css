@@ -2,34 +2,40 @@
 .home {
     position: relative;
     /* border: 1px solid green; */
-    height: 100vh;
+    height: 95vh;
     width: 100%;
     margin: 0 auto;
     /* padding: 20px; */
 }
 
+.home-img-box{
+    height: 85%;
+    /* border: 1px solid green; */
+}
+
 .home img {
     width: 100%;
-    height: 80%;
+    height: 100%;
     object-fit: cover;
 }
 
 .home h1 {
     position: absolute;
-    top: 0;
+    top: 20%;
     text-align: center;
     width: 100%;
     font-family: 'Dancing Script', cursive;
     font-weight: bolder;
     font-size: 2.5rem;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 
 .footer {
     /* border: 1px solid rgb(63, 59, 59); */
-    height: 20%;
+    background-color: #00000076;
+    /* height: 20%; */
     width: 100%;
-    padding: 0 12px;
+    padding: 10px 12px;
     display: flex;
     flex-direction: column;
 }
@@ -37,7 +43,9 @@
 .footer h2 {
     text-align: center;
     font-family: 'Quicksand', sans-serif;
-    padding: 10px;
+    padding: 5px;
+    font-size: 1.2rem;
+    color: #fff;
 }
 
 .footer .btn-box {
@@ -80,6 +88,20 @@
 
 .footer .btn-box .btn-2:hover{
     background-color:gray;
+}
+
+
+@media screen and (max-width: 1025px) {
+
+    .home h1 {
+        text-align: center;
+        width: 100%;
+        font-family: 'Dancing Script', cursive;
+        font-weight: bolder;
+        font-size: 2.5rem;
+        margin-top: 50px;
+    }
+
 }
 
 

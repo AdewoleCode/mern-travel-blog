@@ -14,6 +14,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import DiaryItem from "./Diaries/DiaryItem";
 
+
 function App() {
   const dispatch = useDispatch();
 
@@ -21,13 +22,8 @@ function App() {
     if (localStorage.getItem("userId")) {
       dispatch(authActions.login());
     }
-  }, [localStorage]);
+  }, [localStorage.getItem("userId")]);
 
-  // useEffect(()=> {
-  //   if (isloggedIn){
-
-  //   }
-  // }, [])
 
   const isloggedIn = useSelector((state) => state.isloggedIn);
   console.log(isloggedIn);

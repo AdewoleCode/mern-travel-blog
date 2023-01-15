@@ -40,16 +40,13 @@
 }
 
 .add-diary-box h1 {
-    /* text-align: center; */
-    /* width: 100%; */
     font-family: 'Dancing Script', cursive;
     font-weight: bolder;
     font-size: 2.5rem;
 }
 
 .add-diary-box form {
-    /* border: 1px solid blue; */
-    width: 75%;
+    width: 65%;
     margin: 0 auto;
     padding: 40px;
     display: flex;
@@ -148,7 +145,7 @@
 .diary .diary-image {
     /* border: 1px solid green; */
     height: 55%;
-    width: 95%;
+    width: 98%;
     margin: 0 auto;
 }
 
@@ -196,7 +193,7 @@
     border-radius: 10px;
 }
 
-.diary-btn .upd-icon{
+.diary-btn .upd-icon {
     font-size: 2rem;
 }
 
@@ -204,4 +201,75 @@
     background-color: gray;
     border-radius: 10px;
 
+}
+
+
+@media screen and (max-width: 1025px) {
+
+    .diary {
+        width: 75%;
+    }
+
+    .add-diary-box .text-box .add-icon {
+        font-size: 1.5rem;
+        color: black;
+    }
+
+    .add-diary-box h1 {
+        font-size: 2rem;
+    }
+
+    .add-diary-box form {
+        width: 70%;
+        gap: 1.4rem;
+    }
+    .add-diary-box button {
+        width: 90%;
+        font-size: 0.8rem;
+    }
+
+}
+
+@media screen and (max-width: 769px) {
+
+    .diary {
+        width: 85%;
+    }
+
+    .add-diary-box {
+        margin: 5rem auto;
+    }
+    .add-diary-box .text-box .add-icon {
+        font-size: 1.4rem;
+        color: black;
+    }
+
+    .add-diary-box h1 {
+        font-size: 1.8rem;
+    }
+
+    .add-diary-box form {
+        width: 95%;
+        gap: 1.4rem;
+        /* padding: 40px 20px; */
+
+    }
+    .add-diary-box button {
+        width: 95%;
+        font-size: 0.8rem;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .diary {
+        width: 95%;
+        height: 80vh;
+
+    }
+    .diary .diary-image img {
+        height: 90%;
+        margin: 0 auto;
+    }
 }

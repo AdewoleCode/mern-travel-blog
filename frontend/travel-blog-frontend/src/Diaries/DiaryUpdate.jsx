@@ -5,7 +5,6 @@ import { getSinglePost } from '../api-helpers/helper'
 import PostAddIcon from '@mui/icons-material/PostAdd';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import { updateSinglePost } from '../api-helpers/helper';
 import axios from 'axios';
 
 
@@ -51,10 +50,10 @@ const DiaryUpdate = () => {
             .catch(err => console.log(err))
     }, [id])
 
-    
+
     const onPostUpdate = () => {
         toast.success('post updated succesfully!', toastOptions)
-        navigate('/diaries')    
+        navigate('/diaries')
     }
 
     const handleChange = (event) => {
@@ -84,7 +83,7 @@ const DiaryUpdate = () => {
 
             try {
                 await axios.put(`http://localhost:3030/post/${id}`, posts)
-                .then( onPostUpdate)
+                    .then(onPostUpdate)
             } catch (error) {
                 toast.error(error.message)
             }
@@ -141,7 +140,6 @@ const DiaryUpdate = () => {
                         </form>
                     )
                 }
-
             </div>
             <ToastContainer />
         </>

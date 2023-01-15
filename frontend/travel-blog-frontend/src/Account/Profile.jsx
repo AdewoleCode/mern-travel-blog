@@ -25,9 +25,6 @@ const Profile = () => {
     navigate('/')
   }
 
-
-
-
   return (
     <div className='profile-box'>
       <h1>User Profile</h1>
@@ -54,8 +51,8 @@ const Profile = () => {
                         image={post.image}
                         id={post.id}
                         user={user._id}
-                        name={user.name}          
-                         />
+                        name={user.name}
+                      />
                     )
                   })
                 }

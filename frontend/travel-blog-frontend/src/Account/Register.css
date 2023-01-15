@@ -1,142 +1,177 @@
 .form-container {
-    height: 90vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    align-items: center;
-    background-color: #fff;
-    border: 1px solid skyblue;
+  height: 90vh;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  background-color: #fff;
 }
 
 .brand {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .form-container img {
-    height: 5rem;
+  height: 5rem;
 }
 
 .form-container h1 {
-    color: white;
-    text-transform: uppercase;
+  color: white;
+  text-transform: uppercase;
 }
 
 .form-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.3rem;
-    background-color: #00000076;
-    border-radius: 2rem;
-    padding: 2.2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  background-color: #00000076;
+  /* background-color: #00000050; */
+
+  border-radius: 1rem;
+  padding: 2.2rem 4rem;
+  width: 45%;
+  margin: 0 auto;
+
 }
 
 .form-container input {
-    background-color: transparent;
-    padding: 0.7rem;
-    border: 0.1rem solid skyblue;
-    border-radius: 0.4rem;
-    color: white;
-    width: 100%;
-    font-size: 0.8rem;
+  background-color: transparent;
+  padding: 0.7rem;
+  border: 0.1rem solid skyblue;
+  border-radius: 0.4rem;
+  color: white;
+  width: 100%;
+  font-size: 0.8rem;
 }
 
 .form-container input:focus {
-    border: 0.1rem solid white;
-    outline: none;
+  border: 0.1rem solid white;
+  outline: none;
 }
 
 .form-container input::placeholder {
-    color: white;
+  color: white;
 }
 
 .form-container button {
-    background-color: skyblue;
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    cursor: pointer;
-    border-radius: 0.4rem;
-    font-size: 1rem;
-    font-weight: bolder;
-    text-transform: uppercase;
+  background-color: skyblue;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  text-transform: uppercase;
 }
 
 .form-container button:hover {
-    background-color: rgb(9, 165, 226);
-  }
+  background-color: rgb(9, 165, 226);
+}
 
-.form-container  span {
-    color: white;
-    text-transform: uppercase;
-    font-weight: bolder;
-  }
+.form-container span {
+  color: white;
+  text-transform: uppercase;
+  font-weight: bolder;
+  text-align: center;
+}
 
- .form-container span a {
-    color: skyblue;
-    text-decoration: none;
-    font-weight: bolder;
-  }
+.form-container span a {
+  color: skyblue;
+  text-decoration: none;
+  font-weight: bolder;
+}
 
-  .profile-box{
+.profile-box {
+  width: 100%;
+  /* border: 1px solid red; */
+  padding: 30px;
+}
+
+.profile-box h1 {
+  font-family: 'Dancing Script', cursive;
+  font-weight: bolder;
+  font-size: 2.3rem;
+  text-align: center;
+}
+
+.profile-box .user-info {
+  padding: 0.5rem;
+}
+
+.profile-box .user-info h3 {
+  margin: 10px 0;
+  padding: 0.6rem;
+  border-bottom: 1px solid skyblue;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.profile-box .user-box {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-box .user-post {
+  /* border: 1px solid green; */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.profile-box .user-post img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.profile-box .user-box button {
+  padding: 15px 23px;
+  margin: 5px 10px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  /* outline: none; */
+  border: transparent;
+  cursor: pointer;
+  background-color: rgb(105, 196, 231);
+  color: white;
+  width: 20%;
+}
+
+.profile-box .user-box button:hover {
+  background-color: rgb(148, 221, 250);
+}
+
+
+@media screen and (max-width: 1025px) {
+
+  .form-container form {
+    gap: 1.6rem;
+    background-color: #00000076;
+    width: 70%;
+    padding: 2rem 2rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .form-container form {
     width: 100%;
-    /* border: 1px solid red; */
-    padding: 30px;
   }
 
-  .profile-box h1 {
-    font-family: 'Dancing Script', cursive;
-    font-weight: bolder;
-    font-size: 2.3rem;
-    text-align: center;
-  }
-
-  .profile-box .user-info{
-    padding: 0.5rem;
-  }
-
-  .profile-box .user-info h3{
-    margin: 10px 0;
-    padding: 0.6rem;
-    border-bottom: 1px solid skyblue;
-    font-family: 'Quicksand', sans-serif;
-  }
-
-  .profile-box .user-box {
+  .profile-box {
     width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-  }
-  .profile-box .user-post {
-    /* border: 1px solid green; */
-    width: 100%;
-    margin: 0 auto;
+    padding: 30px 10px;
   }
 
-  .profile-box .user-post img {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-
-  .profile-box .user-box button{
+  .profile-box .user-box button {
     padding: 15px 23px;
-    margin: 5px 10px;
     font-size: 0.8rem;
-    border-radius: 6px;
-    /* outline: none; */
-    border: transparent;
-    cursor: pointer;
-    background-color: rgb(105, 196, 231);
-    color: white;
-    width: 20%;
+    width: 40%;
   }
-
-  .profile-box .user-box button:hover{
-    background-color: rgb(148, 221, 250);
-  }
+}

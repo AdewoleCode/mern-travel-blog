@@ -4,7 +4,7 @@
     align-items: center;
     padding: 14px 8px;
     /* background-color: rgb(147, 180, 194); */
-    background-color: #00000076;
+    background-color: #00000050;
 
     justify-content: space-between;
     position: sticky;
@@ -18,7 +18,7 @@
 .nav_items .menu {
     display: flex;
     align-items: center;
-    column-gap: 2.9rem;
+    gap: 2.9rem;
 }
 
 
@@ -44,4 +44,28 @@
     color: skyblue !important;
     text-decoration: underline !important;
     text-underline-offset: 12px !important;
+}
+
+
+@media screen and (max-width: 1025px) {
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .nav_items .menu {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }  
+    
+    .nav_items li {
+        font-size: 0.80rem;
+        padding: 7px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .navbar {
+        justify-content: space-evenly;
+    }
 }
