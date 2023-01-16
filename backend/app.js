@@ -8,7 +8,8 @@ const userRouter = require('./routes/userRoutes')
 const postRouter = require('./routes/postRoutes')
 
 const corsOptions ={
-    origin:'http://localhost:3030', 
+    // origin:'http://localhost:3030', 
+    origin:'https://travel-diary-backend.onrender.com/', 
     credentials:true,  //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
