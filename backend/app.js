@@ -7,7 +7,15 @@ const cors = require('cors')
 const userRouter = require('./routes/userRoutes')
 const postRouter = require('./routes/postRoutes')
 
-app.use(cors())
+const corsOptions ={
+    origin:'http://localhost:3030', 
+    credentials:true,  //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+
+
+// app.use(cors())
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -20,6 +28,8 @@ app.use("/post", postRouter)
 
 
 const port = process.env.PORT || 3030;
+// const port = process.env.PORT
+
 
 //conect to mongodb and start server
 const start = async () => {
