@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/user", userRouter)
 app.use("/post", postRouter)
 
-router.get("/", (req, res) => {
+userRouter.get("/", (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*")
   res.setHeader("Access-Control-Allow-Credentials", "true");
   res.setHeader("Access-Control-Max-Age", "1800");
