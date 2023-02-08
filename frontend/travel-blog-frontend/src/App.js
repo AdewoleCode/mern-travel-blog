@@ -26,7 +26,6 @@ function App() {
 
 
   const isloggedIn = useSelector((state) => state.isloggedIn);
-  console.log(isloggedIn);
 
   return (
     <div className="App">
