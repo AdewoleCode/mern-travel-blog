@@ -82,7 +82,7 @@ const DiaryUpdate = () => {
         if (handleValidation()) {
 
             try {
-                await axios.put(`http://localhost:3030/post/${id}`, posts)
+                await axios.put(`https://travel-ddiary-api.onrender.com/post/${id}`, posts)
                     .then(onPostUpdate)
             } catch (error) {
                 toast.error(error.message)
