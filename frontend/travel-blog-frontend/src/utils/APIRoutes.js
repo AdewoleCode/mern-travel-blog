@@ -1,4 +1,4 @@
-export const host = "http://localhost:3030";
+export const host = "https://travel-ddiary-api.onrender.com";
 export const loginRoute = `${host}/user/login`;
 export const registerRoute = `${host}/user/signup`;
 export const usersRoute = `${host}/user`;
