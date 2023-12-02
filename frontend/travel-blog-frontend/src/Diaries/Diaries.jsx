@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import "../Diaries/Diaries.css"
-
-import DiaryItem from './DiaryItem'
+import DiaryItem from '../component/DiaryItem'
 import { getAllPosts } from '../api-helpers/helper'
+import Spinner from "../component/spinner/Spinner"
 
 
 const Diaries = () => {
 
-  const [posts, setPosts] = useState()
+  const [posts, setPosts] = useState([])
 
   useEffect(() => {
     getAllPosts().then(result => setPosts(result?.posts)).catch(error => console.log(error))
@@ -16,11 +16,12 @@ const Diaries = () => {
 
   return (
     <div className='diaries'>
+
       {
-        posts && posts.map((post, index) => {
+        posts.length !== 0 ? posts.map((post, index) => {
           return (
             <DiaryItem
-             key={index}
+              key={index}
               date={new Date(`${post.date}`).toLocaleDateString()}
               description={post.description}
               image={post.image}
@@ -32,6 +33,11 @@ const Diaries = () => {
             />
           )
         })
+          :
+          <div className='loading-div'>
+            <h2>loading travel diaries...</h2>
+            <Spinner />
+          </div>
       }
     </div>
   )

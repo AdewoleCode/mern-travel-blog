@@ -1,11 +1,11 @@
 import React from 'react'
 import ModeOfTravelIcon from '@mui/icons-material/ModeOfTravel';
-import { NavLink } from 'react-router-dom'
-import '../Header/Header.css'
+import { NavLink, Link } from 'react-router-dom'
+import './Header.css'
 import { useSelector } from 'react-redux';
 
 const Header = () => {
-    const isloggedIn = useSelector(state=> state.isloggedIn)
+    const isloggedIn = useSelector(state => state.isloggedIn)
 
     const nav__links = [
         {
@@ -46,7 +46,9 @@ const Header = () => {
 
     return (
         <div className="navbar">
-            <ModeOfTravelIcon sx={{ color: "black" }} />
+            <Link to="/home">
+                <ModeOfTravelIcon sx={{ color: "goldenrod" }} />
+            </Link>
 
             <div className="nav_items">
                 <ul className='menu'>

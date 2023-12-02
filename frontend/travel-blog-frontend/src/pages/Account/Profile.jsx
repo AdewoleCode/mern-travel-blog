@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
-import { getUser } from '../api-helpers/helper'
-import '../Account/Register.css'
+import { getUser } from '../../api-helpers/helper'
+import './Register.css'
 import { useState } from 'react'
-import DiaryItem from '../Diaries/DiaryItem'
+import DiaryItem from '../../component/DiaryItem'
 import { useDispatch } from 'react-redux'
-import { authActions } from '../store/store'
+import { authActions } from '../../store/store'
 import { useNavigate } from 'react-router-dom'
 
 

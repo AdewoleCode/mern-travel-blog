@@ -1,6 +1,5 @@
 import React from 'react'
-import '../Home/Home.css'
-import TravelImg from '../assets/travelmal.jpg'
+import './Home.css'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
@@ -8,24 +7,18 @@ const Home = () => {
   const isloggedIn = useSelector((state) => state.isloggedIn);
 
   return (
-    <div className='home'>
       <div className="home-img-box">
-        <img src={TravelImg} alt="travel-img" />
-      </div>
-      <h1>Dare to live the live you've always wanted!</h1>
-      <div className="footer">
+        <h1>Dare to live the life you've always wanted!</h1>
         <h2>SHARE YOUR TRAVEL DIARIES WITH US</h2>
         <div className="btn-box">
           <button className='btn-1'>
             <Link to={isloggedIn ? `${'/add'}` : `${'/login'}`}>
-              Share Your Stories
+              Share Story
             </Link>
           </button>
-
-          <button className='btn-2'> <Link to="/diaries">View Diaries</Link></button>
+          <button className='btn-2'> <Link to="/diaries">View Travel Diaries</Link></button>
         </div>
       </div>
-    </div>
   )
 }
 

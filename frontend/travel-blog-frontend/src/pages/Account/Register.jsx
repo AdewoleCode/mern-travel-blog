@@ -3,9 +3,9 @@ import '../Account/Register.css'
 import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { signUp } from "../api-helpers/helper";
+import { signUp } from "../../api-helpers/helper";
 import { useDispatch } from "react-redux";
-import { authActions } from '../store/store'
+import { authActions } from '../../store/store'
 
 export default function Register() {
   const dispatch = useDispatch()

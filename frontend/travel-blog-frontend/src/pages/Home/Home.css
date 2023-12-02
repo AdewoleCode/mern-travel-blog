@@ -1,0 +1,89 @@
+
+.home-img-box {
+    min-height: 100vh;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: center;
+    justify-content: center;
+    background: url(../../assets//travel.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.home-img-box h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+    font-size: 2.8rem;
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    text-transform: capitalize;
+
+}
+
+.home-img-box h2 {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    padding: 5px;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.home-img-box .btn-box {
+    text-align: center;
+    padding: 10px;
+}
+
+.home-img-box .btn-box button {
+    padding: 12px 23px;
+    margin: 5px 10px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+    border: transparent;
+    cursor: pointer;
+}
+
+.home-img-box .btn-box a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.home-img-box .btn-box .btn-1 {
+    background-color: rgba(223, 170, 91, 1);
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.home-img-box .btn-box .btn-2 {
+    background-color: rgba(223, 170, 91, 1);
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.home-img-box .btn-box .btn-1:hover {
+    background-color: rgb(226, 183, 118);
+}
+
+.home-img-box .btn-box .btn-2:hover {
+    background-color: rgb(226, 183, 118);
+}
+
+
+@media screen and (max-width: 1025px) {
+
+    .home-img-box h1 {
+        font-size: 2.1rem;
+        font-weight: 900;
+    }
+
+    .home-img-box h2 {
+        font-size: 0.95rem;
+    }
+}

@@ -59,7 +59,7 @@
 .add-diary-box form input {
     background-color: transparent;
     padding: 0.75rem;
-    border: 0.1rem solid skyblue;
+    border: 0.1rem solid rgba(223, 170, 91, 1);
     border-radius: 0.3rem;
     color: white;
     width: 100%;
@@ -76,7 +76,7 @@
 }
 
 .add-diary-box button {
-    background-color: skyblue;
+    background-color:  rgba(223, 170, 91, 1);
     width: 60%;
     margin: 0 auto;
     color: white;
@@ -90,18 +90,16 @@
 }
 
 .add-diary-box button:hover {
-    background-color: rgb(9, 165, 226);
+    background-color: rrgb(224, 181, 116)
 }
 
 
 .update-box {
     height: 80vh;
-    border: 1px solid red;
 }
 
-
 .diary {
-    border: 1px solid rgb(159, 217, 240);
+    border: 1px solid rgba(223, 170, 91, 1);
     width: 55%;
     height: 90vh;
     margin: 1rem auto;
@@ -134,13 +132,11 @@
 }
 
 .diary .diary-d h1 {
-    /* border: 1px solid blue; */
     border-radius: 50%;
     padding: 0.3rem 0.8rem;
     color: #fff;
     background-color: blue;
 }
-
 
 .diary .diary-image {
     /* border: 1px solid green; */
@@ -202,6 +198,25 @@
     border-radius: 10px;
 
 }
+
+ .diaries .loading-div{
+    border-radius: 10px;
+    background: rgb(54, 53, 53);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    top: 5rem;
+ }
+
+ .diaries .loading-div h2 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: rgba(223, 170, 91, 1);
+ }
 
 
 @media screen and (max-width: 1025px) {
