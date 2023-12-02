@@ -12,7 +12,7 @@ import { authActions } from "./store/store";
 import DiaryUpdate from "./Diaries/DiaryUpdate";
 import { ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import DiaryItem from "./component/DiaryItem";
+// import DiaryItem from "./component/DiaryItem";
 
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
             <Route path="/diaries" element={<Diaries />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-            <Route path="/item" element={<DiaryItem />} />
+            {/* <Route path="/item" element={<DiaryItem />} /> */}
 
             {isloggedIn && (
               <>
@@ -49,7 +49,7 @@ function App() {
                 <Route path="/profile" element={<ProfilePage />} />
                 <Route path="/post/:id" element={<DiaryUpdate />} />
               </>
-            )}
+            )} 
           </Routes>
         </BrowserRouter>
       </section>
